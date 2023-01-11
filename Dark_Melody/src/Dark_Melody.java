@@ -1,11 +1,14 @@
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Desktop.Action;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -13,11 +16,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 public class Dark_Melody {
-
+	
 	JFrame window;
 	Container con;
 	JPanel titleNamePanel, startButtonPanel, mainTextPanel, choiceButtonPanel;
-	JLabel titleNameLabel;
+	JLabel titleNameLabel,L1,L2;
 	Font titleFont 	= new Font("Times New Roman", Font.PLAIN, 150);
 	Font StartFont 	= new Font("Times New Roman", Font.PLAIN, 80);
 	Font normalFont = new Font("Times New Roman", Font.PLAIN, 25);
@@ -38,18 +41,23 @@ public class Dark_Melody {
 		window = new JFrame();
 		window.setSize(1280, 720);// กำหนดขนาดหน้าต่าง
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.getContentPane().setBackground(Color.black);
-		window.setLayout(null);
+		window.setLocationRelativeTo(null);//**
+		window.getContentPane().setBackground(null);
+		window.setLayout(new FlowLayout());
 		window.setVisible(true);
+		window.setContentPane(new JLabel(new ImageIcon("C:\\Users\\ADMIN\\Pictures\\Wall\\B.jpg")));//**
 		con = window.getContentPane();
+		L1= new JLabel();
+		con.add(L1);
+		window.pack();
 
 		titleNamePanel = new JPanel();
 		titleNamePanel.setBounds(250, 100, 800, 200);// กำหนดขนาดกรอบข้อความ
-		titleNamePanel.setBackground(Color.black);
+		titleNamePanel.setBackground(null);
 		titleNameLabel = new JLabel("Dark Melody");
 		titleNameLabel.setForeground(Color.white);
 		titleNameLabel.setFont(titleFont);
-
+		
 		startButtonPanel = new JPanel();
 		startButtonPanel.setBounds(485, 350, 300, 150);
 		startButtonPanel.setBackground(Color.black);
@@ -68,6 +76,10 @@ public class Dark_Melody {
 	}
 
 	public void GameScreen() {
+		window.setContentPane(new JLabel(new ImageIcon("C:\\Users\\ADMIN\\Pictures\\Wall\\F.jpg")));//**
+		con = window.getContentPane();
+		L2= new JLabel();
+		con.add(L2);
 
 		titleNamePanel.setVisible(false);
 		startButtonPanel.setVisible(false);
@@ -118,7 +130,6 @@ public class Dark_Melody {
 		choice3.setActionCommand("c3");
 		choiceButtonPanel.add(choice3);
 		Story();
-
 	}
 
 	public void Story() {
