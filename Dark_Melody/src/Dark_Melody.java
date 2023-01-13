@@ -1,4 +1,4 @@
-import java.awt.Color;
+/*import java.awt.Color;
 import java.awt.Container;
 import java.awt.Desktop.Action;
 import java.awt.FlowLayout;
@@ -182,7 +182,7 @@ public class Dark_Melody {
 
 			String yourChoice = event.getActionCommand();
 
-			/*while (true) {
+			while (true) {
 				if (yourChoice.equals("c1")) {
 					talkGuard();
 					break;
@@ -195,7 +195,7 @@ public class Dark_Melody {
 					Guard();
 					break;
 				}
-			}*/
+			}
 
 			switch (position) {
 			case "town":
@@ -237,4 +237,4 @@ public class Dark_Melody {
 			}
 		}
 	}
-}
+}*/
