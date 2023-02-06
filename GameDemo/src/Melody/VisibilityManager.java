@@ -14,6 +14,8 @@ public class VisibilityManager {
 		ui.subtitleNamePanel.setVisible(true);
 		ui.startButtonPanel.setVisible(true);
 		ui.exitButtonPanel.setVisible(true);
+		ui.howToButtonPanel.setVisible(true);
+		ui.choiceBackPanel.setVisible(false);
 
 		// Hide the game screen
 		ui.mainTextPanel.setVisible(false);
@@ -28,10 +30,27 @@ public class VisibilityManager {
 		ui.subtitleNamePanel.setVisible(false);
 		ui.startButtonPanel.setVisible(false);
 		ui.exitButtonPanel.setVisible(false);
+		ui.howToButtonPanel.setVisible(false);
+		ui.choiceBackPanel.setVisible(false);
 
 		// Show the game screen
 		ui.mainTextPanel.setVisible(true);
 		ui.choiceButtonPanel.setVisible(true);
 		ui.playerPanel.setVisible(true);
+	}
+
+	public void howToBack() {
+		// Hide the title screen
+		ui.titleNamePanel.setVisible(false);
+		ui.subtitleNamePanel.setVisible(false);
+		ui.startButtonPanel.setVisible(false);
+		ui.exitButtonPanel.setVisible(false);
+		ui.howToButtonPanel.setVisible(false);
+		ui.choiceBackPanel.setVisible(true);
+
+		// Show the game screen
+		ui.mainTextPanel.setVisible(true);
+		ui.choiceButtonPanel.setVisible(false);
+		ui.playerPanel.setVisible(false);
 	}
 }
