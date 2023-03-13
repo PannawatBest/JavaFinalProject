@@ -23,7 +23,7 @@ public class VisibilityManager {
 		ui.playerPanel.setVisible(false);
 	}
 
-	public void titleToTown() {
+	public void MainStory() {
 
 		// Hide the title screen
 		ui.titleNamePanel.setVisible(false);
@@ -39,7 +39,7 @@ public class VisibilityManager {
 		ui.playerPanel.setVisible(true);
 	}
 
-	public void howToBack() {
+	public void Description() {
 		// Hide the title screen
 		ui.titleNamePanel.setVisible(false);
 		ui.subtitleNamePanel.setVisible(false);

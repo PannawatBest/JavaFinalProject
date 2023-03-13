@@ -15,19 +15,22 @@ import Melody.DarkMelody.ChoiceHandler;
 public class UI {
 	JFrame window;
 	JPanel titleNamePanel, subtitleNamePanel, startButtonPanel, howToButtonPanel, exitButtonPanel, mainTextPanel,
-			choiceButtonPanel, choiceBackPanel, playerPanel;
-	JLabel titleNameLabel, subtitleNameLabel, hpLabel, hpNumberLabel;
-	JButton startButton, howToButton, exitButton, choice1, choice2, choice3, choiceB;
-	JTextArea mainTextArea;
+			choiceButtonPanel, choiceBackPanel, playerPanel, loginPanel, userPanel, endTextPanel;
+	JPanel endPanel;
+	JLabel titleNameLabel, subtitleNameLabel, hpLabel, hpNumberLabel, endLabel;
+	JButton startButton, howToButton, exitButton, choice1, choice2, choice3, choiceB, login;
+	JTextArea mainTextArea, endTextArea;
 	Font titleFont = new Font("Times New Roman", Font.PLAIN, 120);
 	Font subtitleFont = new Font("Times New Roman", Font.PLAIN, 40);
-	Font normalFont = new Font("Times New Roman", Font.PLAIN, 26);
-	Font thaiFont = new Font("Angsana New", Font.PLAIN, 26);
+	Font normalFont = new Font("Times New Roman", Font.PLAIN, 30);
+	Font thaiFont = new Font("Angsana New", Font.PLAIN, 30);
+	Font maintextFont = new Font("Angsana New", Font.PLAIN, 20);
+	Font Ending = new Font("Times New Roman", Font.PLAIN, 120);
 
 	public void createUI(ChoiceHandler cHandler) {
 		// Window
 		window = new JFrame();
-		window.setSize(1000, 600);
+		window.setSize(1000, 650);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.getContentPane().setBackground(Color.black);
 		window.setLayout(null);
@@ -50,9 +53,9 @@ public class UI {
 		subtitleNamePanel.add(subtitleNameLabel);
 
 		startButtonPanel = new JPanel();
-		startButtonPanel.setBounds(400, 300, 200, 100);
+		startButtonPanel.setBounds(370, 300, 250, 100);
 		startButtonPanel.setBackground(Color.black);
-		startButton = new JButton("START");
+		startButton = new JButton("|         START         |");
 		startButton.setBackground(Color.black);
 		startButton.setForeground(Color.white);
 		startButton.setFont(normalFont);
@@ -62,21 +65,21 @@ public class UI {
 		startButtonPanel.add(startButton);
 
 		howToButtonPanel = new JPanel();
-		howToButtonPanel.setBounds(400, 350, 200, 100);
+		howToButtonPanel.setBounds(370, 350, 250, 100);
 		howToButtonPanel.setBackground(Color.black);
-		howToButton = new JButton("How To?");
+		howToButton = new JButton("||  DESCRIPTION  ||");
 		howToButton.setBackground(Color.black);
 		howToButton.setForeground(Color.white);
 		howToButton.setFont(normalFont);
 		howToButton.setFocusPainted(false);
 		howToButton.addActionListener(cHandler);
-		howToButton.setActionCommand("howTo");
+		howToButton.setActionCommand("Dc");
 		howToButtonPanel.add(howToButton);
 
 		exitButtonPanel = new JPanel();
-		exitButtonPanel.setBounds(400, 400, 200, 100);
+		exitButtonPanel.setBounds(370, 400, 250, 100);
 		exitButtonPanel.setBackground(Color.black);
-		exitButton = new JButton("EXIT");
+		exitButton = new JButton("|||         EXIT         |||");
 		exitButton.setBackground(Color.black);
 		exitButton.setForeground(Color.white);
 		exitButton.setFont(normalFont);
@@ -90,19 +93,21 @@ public class UI {
 		window.add(subtitleNamePanel);
 		window.add(startButtonPanel);
 		window.add(howToButtonPanel);
+		// window.add(loginPanel);
 		window.add(exitButtonPanel);
 
 		// Game screen
 		mainTextPanel = new JPanel();
-		mainTextPanel.setBounds(100, 100, 600, 250);
+		mainTextPanel.setBounds(100, 100, 550, 450);
 		mainTextPanel.setBackground(Color.black);
 		window.add(mainTextPanel);
 
-		mainTextArea = new JTextArea("This is the main thext area เกมนี้มันสุดยอด");
-		mainTextArea.setBounds(100, 100, 600, 250);
+		mainTextArea = new JTextArea("เปิดเทอมวันแรกอันแสนวุ่นวาย ในมหาลัยครึ้กครื้น เสียงดัง \r\n"
+				+ "ส่วนผมนั่งอยู่ที่โต๊ะหินอ่อนหน้าคณะของตัวเองรอเวลาที่จะขึ้นเรียน จู่ๆก็มีผู้ชายคนนึงเข้ามาทักผม");
+		mainTextArea.setBounds(100, 100, 550, 250);
 		mainTextArea.setBackground(Color.black);
 		mainTextArea.setForeground(Color.white);
-		mainTextArea.setFont(thaiFont);
+		mainTextArea.setFont(maintextFont);
 		mainTextArea.setLineWrap(true);
 		mainTextArea.setWrapStyleWord(true);
 		mainTextArea.setEditable(false);
@@ -159,12 +164,12 @@ public class UI {
 
 		// HP
 		playerPanel = new JPanel();
-		playerPanel.setBounds(10, 15, 100, 50);
+		playerPanel.setBounds(10, 15, 600, 50);
 		playerPanel.setBackground(Color.black);
 		playerPanel.setLayout(new GridLayout(1, 1));
 		window.add(playerPanel);
 
-		hpLabel = new JLabel("HP");
+		hpLabel = new JLabel("| RELATIONSHIP | : ");
 		hpLabel.setFont(normalFont);
 		hpLabel.setForeground(Color.white);
 		playerPanel.add(hpLabel);

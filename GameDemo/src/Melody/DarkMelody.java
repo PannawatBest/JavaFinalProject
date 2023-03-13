@@ -2,6 +2,7 @@ package Melody;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
 
 public class DarkMelody {
 
@@ -29,28 +30,54 @@ public class DarkMelody {
 
 			switch (yourChoice) {
 			case "start":
-				vm.titleToTown();
-				story.townGate();
+				vm.MainStory();
+				try {
+					story.heading();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
-			case "howTo":
-				vm.howToBack();
-				story.howTo();
+			case "Dc":
+				vm.Description();
+				story.Description();
+				break;
+			case "cB":
+				try {
+					story.selectPosition(nextPositionB);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
 			case "exit":
 				System.exit(0);
+
 			case "c1":
-				story.selectPosition(nextPosition1);
+				try {
+					story.selectPosition(nextPosition1);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
 			case "c2":
-				story.selectPosition(nextPosition2);
+				try {
+					story.selectPosition(nextPosition2);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
 			case "c3":
-				story.selectPosition(nextPosition3);
+				try {
+					story.selectPosition(nextPosition3);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
 
-			case "cB":
-				story.selectPosition(nextPositionB);
-				break;
 			}
 
 		}

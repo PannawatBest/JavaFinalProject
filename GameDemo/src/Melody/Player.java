@@ -1,6 +1,6 @@
 package Melody;
 
 public class Player {
-	public int hp;
+	public int rl;
 
 }
